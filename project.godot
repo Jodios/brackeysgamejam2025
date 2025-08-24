@@ -21,6 +21,7 @@ Global="*res://globals/global.gd"
 Inputs="*res://globals/inputs.gd"
 Signals="*res://globals/signals.gd"
 Scenes="*res://globals/scenes.gd"
+Transitions="*res://globals/transitions.tscn"
 
 [display]
 
