@@ -6,3 +6,7 @@ const IS_DEV: bool = true
 const SKIP_MAIN_MENU: bool = true
 
 # others
+var viewport_size: Vector2
+
+func _ready() -> void:
+    viewport_size = get_viewport().get_visible_rect().size
