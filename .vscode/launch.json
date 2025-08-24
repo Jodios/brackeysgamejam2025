@@ -1,0 +1,32 @@
+{
+    // To use vscode instead of Godot's built-in debugger, install the "Godot Tools" extension
+    // In godot go to Editor Settings -> Text Editor -> External 
+    // * Exec Path (change) = PATH_TO_VSCODE_EXECUTABLE
+    // * Exec Flags (exactly like this) = {project} --goto {file}:{line}:{col}
+    // 
+    // Go to Editor Settings -> Network -> Language Server
+    // Make sure Remote Port matches the Godot Tools extension port
+    // 
+    // DEBUGGING
+    // Go to Editor Settings -> Network -> Debug
+    // Port should be 6007
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "GDScript: Launch Project",
+            "type": "godot",
+            "request": "launch",
+            "project": "${workspaceFolder}",
+            "debug_collisions": false,
+            "debug_paths": false,
+            "debug_navigation": false,
+            "additional_options": ""
+        },
+        {
+            "name": "GDScript: Attach to Project",
+            "type": "godot",
+            "request": "attach",
+            "port": 6007
+        }
+    ]
+}

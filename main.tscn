@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://ckmrm2aqnds53"]
+
+[ext_resource type="Script" uid="uid://wfw1x4abgqfv" path="res://main.gd" id="1_ig7tw"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_ig7tw")
+
+[node name="TempTitleLabel" type="Label" parent="."]
+offset_left = 356.0
+offset_top = 102.0
+offset_right = 783.0
+offset_bottom = 171.0
+theme_override_font_sizes/font_size = 50
+text = "VERY COOL GAME"
+
+[node name="TempStartButton" type="Button" parent="."]
+offset_left = 168.0
+offset_top = 437.0
+offset_right = 336.0
+offset_bottom = 538.0
+text = "START"
+
+[node name="TempQuitButton" type="Button" parent="."]
+offset_left = 817.09
+offset_top = 437.0
+offset_right = 985.09
+offset_bottom = 538.0
+text = "QUIT"
