@@ -7,7 +7,7 @@ func _ready() -> void:
 	start_button.pressed.connect(_on_start_button_pressed)
 	quit_button.pressed.connect(_on_quit_button_pressed)
 	if Global.SKIP_MAIN_MENU:
-		_on_start_button_pressed()
+		get_tree().call_deferred("change_scene_to_file", Scenes.Level1)
 
 func _on_start_button_pressed() -> void:
 	Transitions.fade_in(Scenes.Level1)
