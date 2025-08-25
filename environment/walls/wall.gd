@@ -13,13 +13,10 @@ enum WallType {
 
 var is_open: bool = false
 
-signal open
-
 func _ready() -> void:
 	# I know this can get messy but it's fine
 	# for game jam
 	if wall_type == WallType.OPENING:
-		open.connect(on_open)
 		solid_wall.process_mode = Node.PROCESS_MODE_DISABLED
 		solid_wall.visible = false
 		opening_wall.visible = true
@@ -34,3 +31,7 @@ func on_open() -> void:
 		animation_player.play("open")
 	else:
 		animation_player.play_backwards("open")
+
+func trigger() -> void:
+	if wall_type == WallType.OPENING:
+		on_open()
