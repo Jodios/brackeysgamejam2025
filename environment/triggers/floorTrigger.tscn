@@ -1,0 +1,61 @@
+[gd_scene load_steps=7 format=3 uid="uid://cnea36sylfljp"]
+
+[ext_resource type="Script" uid="uid://v81efg3n2hsb" path="res://environment/triggers/floor_trigger.gd" id="1_xmdlv"]
+[ext_resource type="Texture2D" uid="uid://cx1byohkkfvnh" path="res://assets/environment/triggers/temporary-test-floor-button.png" id="2_mw22c"]
+
+[sub_resource type="Animation" id="Animation_xmdlv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Temporary-test-floor-button:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_bodb1"]
+resource_name = "activate"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Temporary-test-floor-button:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5qnqe"]
+_data = {
+&"RESET": SubResource("Animation_xmdlv"),
+&"activate": SubResource("Animation_bodb1")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xmdlv"]
+radius = 32.0156
+
+[node name="FloorTrigger" type="Node2D"]
+script = ExtResource("1_xmdlv")
+
+[node name="Temporary-test-floor-button" type="Sprite2D" parent="."]
+texture = ExtResource("2_mw22c")
+hframes = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_5qnqe")
+}
+
+[node name="TriggerArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerArea"]
+shape = SubResource("CircleShape2D_xmdlv")
