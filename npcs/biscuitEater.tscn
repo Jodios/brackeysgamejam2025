@@ -4,20 +4,21 @@
 [ext_resource type="Texture2D" uid="uid://b3gfpxjh7ot6a" path="res://assets/entities/temporary_test_biscuit_eater.png" id="2_pgddg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pgddg"]
-size = Vector2(41, 62)
+size = Vector2(9, 15)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pgddg"]
-radius = 49.0408
+radius = 12.0
 
 [node name="BiscuitEater" type="CharacterBody2D"]
+y_sort_enabled = true
 script = ExtResource("1_oq3j8")
 
 [node name="TemporaryTestBiscuitEater" type="Sprite2D" parent="."]
-position = Vector2(0, -11)
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_pgddg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1.5, -10)
+position = Vector2(-0.5, 0.5)
 shape = SubResource("RectangleShape2D_pgddg")
 
 [node name="InteractArea" type="Area2D" parent="."]
