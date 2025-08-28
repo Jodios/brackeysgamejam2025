@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://bg88x376by6jr"]
+
+[ext_resource type="Script" uid="uid://df2u76rq1n8p6" path="res://npcs/biscuit_eater.gd" id="1_oq3j8"]
+[ext_resource type="Texture2D" uid="uid://b3gfpxjh7ot6a" path="res://assets/entities/temporary_test_biscuit_eater.png" id="2_pgddg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pgddg"]
+size = Vector2(41, 62)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pgddg"]
+radius = 49.0408
+
+[node name="BiscuitEater" type="CharacterBody2D"]
+script = ExtResource("1_oq3j8")
+
+[node name="TemporaryTestBiscuitEater" type="Sprite2D" parent="."]
+position = Vector2(0, -11)
+texture = ExtResource("2_pgddg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.5, -10)
+shape = SubResource("RectangleShape2D_pgddg")
+
+[node name="InteractArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea"]
+shape = SubResource("CircleShape2D_pgddg")
