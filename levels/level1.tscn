@@ -52,5 +52,6 @@ target = NodePath("../Walls/Wall4")
 position = Vector2(374, 335)
 target = NodePath("../Walls/Wall4")
 
+
 [node name="BiscuitEater" parent="." instance=ExtResource("6_pdpul")]
 position = Vector2(878, 530)
