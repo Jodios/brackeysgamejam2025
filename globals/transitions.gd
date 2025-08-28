@@ -7,6 +7,7 @@ func _ready() -> void:
 	color_rect.size = Global.viewport_size
 
 func fade_in(target: String) -> void:
+	Global.disable_stats()
 	get_tree().paused = true
 	animation_player.play("fade_in")
 	await animation_player.animation_finished
@@ -14,3 +15,4 @@ func fade_in(target: String) -> void:
 	animation_player.play_backwards("fade_in")
 	await animation_player.animation_finished
 	get_tree().paused = false
+	Global.enable_stats()
