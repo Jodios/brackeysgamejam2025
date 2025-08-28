@@ -1,10 +1,17 @@
 class_name Level
 extends Node2D
 
-@onready var walls: Node2D = $Walls
+# enum for levels
+enum LevelEnum {
+	LEVEL_1,
+	LEVEL_2,
+	LEVEL_3
+}
+
+@export var level: LevelEnum = LevelEnum.LEVEL_1
 var open_walls: Array[WallClass] = []
 
 func _ready() -> void:
-	for child in walls.get_children():
-		if child is WallClass && child.wall_type == WallClass.WallType.OPENING:
-			open_walls.append(child)
+	return
+	if level == LevelEnum.LEVEL_1:
+		Dialogic.start(Timelines.Intro)

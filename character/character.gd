@@ -24,3 +24,6 @@ func handle_player_orientation() -> void:
 		player_sprite.rotation = - (PI / 2) if velocity.x < 0 else (PI / 2)
 	elif velocity.y != 0:
 		player_sprite.rotation = 0.0 if velocity.y < 0 else PI
+
+func pickup(node: Node2D):
+	print(node)

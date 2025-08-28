@@ -24,6 +24,7 @@ Scenes="*res://globals/scenes.gd"
 Transitions="*res://globals/transitions.tscn"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 Timelines="*res://globals/timelines.gd"
+Stats="*res://globals/stats.tscn"
 
 [dialogic]
 
@@ -32,6 +33,7 @@ directories/dch_directory={
 "character": "res://dialogic/characters/character.dch"
 }
 directories/dtl_directory={
+"intro": "res://dialogic/timelines/intro.dtl",
 "test_timeline": "res://dialogic/timelines/test_timeline.dtl"
 }
 layout/style_list=[]
