@@ -1,7 +1,7 @@
 class_name Character
 extends CharacterBody2D
 
-@export var speed: float = 200.0 # pixels per second
+@export var speed: float = 100.0 # pixels per second
 
 @onready var player_sprite: Sprite2D = $TemporaryTestPlayerSprite
 

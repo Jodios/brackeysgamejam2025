@@ -4,16 +4,15 @@
 [ext_resource type="Texture2D" uid="uid://bejai7ogvqdix" path="res://assets/temporary_test_biscuit_16x16.png" id="1_uf708"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6lk42"]
-radius = 20.025
 
 [node name="Biscuit" type="Node2D"]
 script = ExtResource("1_6lk42")
 
 [node name="TemporaryTestBiscuit16x16" type="Sprite2D" parent="."]
-scale = Vector2(2, 2)
 texture = ExtResource("1_uf708")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(0.5, 0.5)
 shape = SubResource("CircleShape2D_6lk42")
