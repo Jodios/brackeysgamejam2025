@@ -1,21 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://bxdjk7knplula"]
+[gd_scene load_steps=3 format=3 uid="uid://bxdjk7knplula"]
 
 [ext_resource type="Script" uid="uid://78upkrgkh7c1" path="res://globals/stats.gd" id="1_5y2ie"]
+[ext_resource type="FontFile" uid="uid://778va0hil784" path="res://assets/fonts/Tiny5-Regular.ttf" id="2_hrqhn"]
 
-[node name="Stats" type="Control"]
-z_index = 100
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 1
+[node name="Stats" type="CanvasLayer"]
 script = ExtResource("1_5y2ie")
 
 [node name="BiscuitsLabel" type="Label" parent="."]
-layout_mode = 0
 offset_right = 139.0
 offset_bottom = 69.0
-theme_override_font_sizes/font_size = 16
+theme_override_fonts/font = ExtResource("2_hrqhn")
+theme_override_font_sizes/font_size = 32
 text = "Biscuits: "

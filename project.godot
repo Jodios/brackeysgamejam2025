@@ -36,13 +36,13 @@ directories/dtl_directory={
 "intro": "res://dialogic/timelines/intro.dtl",
 "test_timeline": "res://dialogic/timelines/test_timeline.dtl"
 }
-layout/style_list=[]
-layout/default_style="Default"
+layout/style_list=["res://dialogic/themes/box_theme.tres"]
+layout/default_style="res://dialogic/themes/box_theme.tres"
 
 [display]
 
-window/size/viewport_width=256
-window/size/viewport_height=144
+window/size/viewport_width=768
+window/size/viewport_height=432
 window/size/window_width_override=1920
 window/size/window_height_override=1080
 window/stretch/mode="viewport"
