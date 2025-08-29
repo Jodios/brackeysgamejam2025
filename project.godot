@@ -36,8 +36,8 @@ directories/dtl_directory={
 "intro": "res://dialogic/timelines/intro.dtl",
 "test_timeline": "res://dialogic/timelines/test_timeline.dtl"
 }
-layout/style_list=["res://dialogic/themes/text_box_theme.tres"]
-layout/default_style="res://dialogic/themes/text_box_theme.tres"
+layout/style_list=["res://dialogic/themes/box_theme.tres"]
+layout/default_style="res://dialogic/themes/box_theme.tres"
 
 [display]
 
