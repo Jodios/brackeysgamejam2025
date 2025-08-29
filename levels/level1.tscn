@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://68ju02lfiusm"]
+[gd_scene load_steps=11 format=4 uid="uid://68ju02lfiusm"]
 
 [ext_resource type="Script" uid="uid://byp5j8kaadwub" path="res://game_container.gd" id="1_omn1t"]
 [ext_resource type="PackedScene" uid="uid://rixrlir5sext" path="res://character/character.tscn" id="1_sjb42"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://bg88x376by6jr" path="res://npcs/biscuitEater.tscn" id="6_pdpul"]
 [ext_resource type="PackedScene" uid="uid://6dbpya418eis" path="res://environment/key/key.tscn" id="7_045es"]
 [ext_resource type="PackedScene" uid="uid://cnea36sylfljp" path="res://environment/triggers/floorTrigger.tscn" id="8_omn1t"]
+[ext_resource type="AudioStream" uid="uid://bia3wm8q2mjnx" path="res://assets/music/biscuiteater.ogg" id="9_lf3p4"]
+[ext_resource type="AudioStream" uid="uid://bbvimfsgrhm3g" path="res://assets/music/biscuiteater-dialogue.ogg" id="10_yydhl"]
 
 [node name="GameContainer" type="Node2D"]
 script = ExtResource("1_omn1t")
@@ -51,3 +53,16 @@ position = Vector2(173, 85)
 [node name="FloorTrigger" parent="Level1" node_paths=PackedStringArray("target") instance=ExtResource("8_omn1t")]
 position = Vector2(100, 104)
 target = NodePath("../Wall")
+
+[node name="MusicDefault" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_lf3p4")
+autoplay = true
+bus = &"Music"
+parameters/looping = true
+
+[node name="MusicDialogue" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_yydhl")
+volume_db = -80.0
+autoplay = true
+bus = &"Music"
+parameters/looping = true
