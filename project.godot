@@ -34,10 +34,13 @@ directories/dch_directory={
 }
 directories/dtl_directory={
 "intro": "res://dialogic/timelines/intro.dtl",
-"test_timeline": "res://dialogic/timelines/test_timeline.dtl"
+"test_timeline": "res://dialogic/timelines/test_timeline.dtl",
+"tutorial_timeline": "res://dialogic/timelines/tutorial_timeline.dtl"
 }
 layout/style_list=["res://dialogic/themes/box_theme.tres"]
 layout/default_style="res://dialogic/themes/box_theme.tres"
+variables={}
+glossary/default_case_sensitive=true
 
 [display]
 

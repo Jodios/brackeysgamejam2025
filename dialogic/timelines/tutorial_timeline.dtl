@@ -1,0 +1,23 @@
+join biscuit_eater center [animation="Fade In"]
+if Global.biscuits < 3.0:
+	biscuit_eater: *munch munch* … Oh, a fresh face.
+	biscuit_eater: I can smell biscuits… but not enough.
+	biscuit_eater: Bring me THREE biscuits, no less.
+	biscuit_eater: Then we’ll see if luck’s on your side.
+else:
+	biscuit_eater: *crumbs spraying everywhere* Aha! Three biscuits!
+	biscuit_eater: Now that’s what I call a proper snack.
+	biscuit_eater: Hand ‘em over, and I’ll show you the way, boy.
+	biscuit_eater: …Of course, whether it helps you or hurts you… that’s the gamble.
+	- Give Biscuits
+		biscuit_eater: *crunch crunch crunch* …Mmmm, delicious.
+		biscuit_eater: Very well, a deal’s a deal.
+		biscuit_eater: I shall pave the way fo you.
+		biscuit_eater: risk it… for the biscuit. *evil chuckle*
+	- Keep Biscuits
+		biscuit_eater: *chews slowly, crumbs falling*
+		biscuit_eater: Hah… so you’d rather keep your biscuits?
+		biscuit_eater: I can’t blame you… they do look tasty.
+		biscuit_eater: But remember, biscuits are only worth something if you spend them.
+		biscuit_eater: Walk away if you want… but the maze won’t get any easier, boy.
+[wait_input hide_text="false"]

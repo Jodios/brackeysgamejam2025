@@ -11,7 +11,7 @@ func _ready() -> void:
 func on_body_entered(body: Node) -> void:
 	if body is Character:
 		dialogOpen = true;
-		Dialogic.start(Timelines.TestTimeline)
+		Dialogic.start(Timelines.Tutorial)
 		switch_to_dialogue()
 		Dialogic.timeline_ended.connect(switch_to_main)
 
