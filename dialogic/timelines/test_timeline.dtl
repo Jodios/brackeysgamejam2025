@@ -2,3 +2,5 @@ join biscuit_eater right
 join character left
 biscuit_eater: hahaha
 character: hohoho
+update character [animation="Heartbeat"]
+character: test
