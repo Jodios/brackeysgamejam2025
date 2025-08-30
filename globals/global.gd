@@ -10,6 +10,11 @@ var viewport_size: Vector2
 var biscuits: int = 0
 var pause_inputs: bool = false
 
+enum Condition {
+    SATISFIED_BISCUIT_EATER
+}
+signal satisfy_conditions_changed(condition: Array[Condition])
+
 func _ready() -> void:
     viewport_size = get_viewport().get_visible_rect().size
     Signals.add_biscuit.connect(on_add_biscuit)
@@ -19,9 +24,14 @@ func _ready() -> void:
     Dialogic.timeline_ended.connect(on_dialog_ended)
 
 func _on_dialogic_signal_event(event) -> void:
-    if event is Dictionary && event["name"]:
+    if event is Dictionary && "name" in event:
         if event["name"] == "lose_biscuits":
             Signals.lose_biscuits.emit(event["amount"])
+
+func satisfy_conditions(conditions: Array) -> void:
+    var new_conditions: Array[Condition] = []
+    new_conditions.assign(conditions)
+    satisfy_conditions_changed.emit(new_conditions)
 
 func on_dialog_started() -> void:
     pause_inputs = true
