@@ -170,13 +170,16 @@ _data = {
 }
 
 [node name="Wall" type="Node2D"]
+y_sort_enabled = true
 script = ExtResource("1_ufb0x")
 
 [node name="SolidWall" type="StaticBody2D" parent="."]
+y_sort_enabled = true
 
 [node name="ColorRect" type="ColorRect" parent="SolidWall"]
 offset_right = 32.0
 offset_bottom = 8.0
+pivot_offset = Vector2(16, 4)
 color = Color(0, 0, 0, 1)
 
 [node name="TemporaryTestWalls" type="Sprite2D" parent="SolidWall"]
@@ -189,6 +192,7 @@ shape = SubResource("RectangleShape2D_noj5u")
 
 [node name="OpeningWall" type="StaticBody2D" parent="."]
 visible = false
+y_sort_enabled = true
 
 [node name="ColorRect2" type="ColorRect" parent="OpeningWall"]
 offset_right = 16.0

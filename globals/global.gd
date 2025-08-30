@@ -8,11 +8,26 @@ const SKIP_MAIN_MENU: bool = true
 # others
 var viewport_size: Vector2
 var biscuits: int = 0
+var pause_inputs: bool = false
 
 func _ready() -> void:
     viewport_size = get_viewport().get_visible_rect().size
     Signals.add_biscuit.connect(on_add_biscuit)
     Signals.lose_biscuits.connect(on_lose_biscuits)
+    Dialogic.signal_event.connect(_on_dialogic_signal_event)
+    Dialogic.timeline_started.connect(on_dialog_started)
+    Dialogic.timeline_ended.connect(on_dialog_ended)
+
+func _on_dialogic_signal_event(event) -> void:
+    if event is Dictionary && event["name"]:
+        if event["name"] == "lose_biscuits":
+            Signals.lose_biscuits.emit(event["amount"])
+
+func on_dialog_started() -> void:
+    pause_inputs = true
+
+func on_dialog_ended() -> void:
+    pause_inputs = false
 
 # This cannot be in stats itself because disabling
 # process_mode you wouldn't be able to call enable 

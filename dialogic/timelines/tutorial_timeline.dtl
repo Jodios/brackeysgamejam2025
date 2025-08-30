@@ -10,6 +10,7 @@ else:
 	biscuit_eater: Hand ‘em over, and I’ll show you the way, boy.
 	biscuit_eater: …Of course, whether it helps you or hurts you… that’s the gamble.
 	- Give Biscuits
+		[signal arg_type="dict" arg="{"amount":3,"name":"lose_biscuits"}"]
 		biscuit_eater: *crunch crunch crunch* …Mmmm, delicious.
 		biscuit_eater: Very well, a deal’s a deal.
 		biscuit_eater: I shall pave the way fo you.
@@ -20,4 +21,3 @@ else:
 		biscuit_eater: I can’t blame you… they do look tasty.
 		biscuit_eater: But remember, biscuits are only worth something if you spend them.
 		biscuit_eater: Walk away if you want… but the maze won’t get any easier, boy.
-[wait_input hide_text="false"]
