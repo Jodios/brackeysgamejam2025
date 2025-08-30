@@ -15,6 +15,7 @@ else:
 		biscuit_eater: Very well, a deal’s a deal.
 		biscuit_eater: I shall pave the way fo you.
 		biscuit_eater: risk it… for the biscuit. *evil chuckle*
+		do Global.satisfy_conditions([Global.Condition.SATISFIED_BISCUIT_EATER])
 	- Keep Biscuits
 		biscuit_eater: *chews slowly, crumbs falling*
 		biscuit_eater: Hah… so you’d rather keep your biscuits?

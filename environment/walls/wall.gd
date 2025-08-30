@@ -6,20 +6,25 @@ enum WallType {
 	OPENING,
 }
 
+@export var conditions: Array[Global.Condition] = []
 @export var wall_type: WallType = WallType.SOLID
 @onready var solid_wall: StaticBody2D = $SolidWall
 @onready var opening_wall: StaticBody2D = $OpeningWall
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
+var satisfied_conditions: Array[Global.Condition] = []
 var is_open: bool = false
 
 func _ready() -> void:
 	# I know this can get messy but it's fine
 	# for game jam
 	if wall_type == WallType.OPENING:
+		add_to_group("has_conditions")
 		solid_wall.process_mode = Node.PROCESS_MODE_DISABLED
 		solid_wall.visible = false
 		opening_wall.visible = true
+		if check_conditions():
+			trigger()
 	elif wall_type == WallType.SOLID:
 		opening_wall.process_mode = Node.PROCESS_MODE_DISABLED
 		opening_wall.visible = false
@@ -35,3 +40,9 @@ func on_open() -> void:
 func trigger() -> void:
 	if wall_type == WallType.OPENING:
 		on_open()
+
+func check_conditions() -> bool:
+	for condition in conditions:
+		if not condition in satisfied_conditions:
+			return false
+	return true
