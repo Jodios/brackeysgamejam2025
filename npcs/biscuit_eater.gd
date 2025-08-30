@@ -6,14 +6,7 @@ extends CharacterBody2D
 var dialogOpen = false;
 
 func _ready() -> void:
-	interaction_area.body_entered.connect(on_body_entered)
-
-func on_body_entered(body: Node) -> void:
-	if body is Character:
-		dialogOpen = true;
-		Dialogic.start(Timelines.Tutorial)
-		switch_to_dialogue()
-		Dialogic.timeline_ended.connect(switch_to_main)
+	Dialogic.timeline_ended.connect(switch_to_main)
 
 # i have no idea how to grab the global vars for volume so this is bad
 # also don't know how to just have these as global vars lol
@@ -36,3 +29,8 @@ func switch_to_main():
 	audioTween.tween_property($"../MusicDefault", "volume_db", linear_to_db(1.0), 0.75).from(linear_to_db(0.1))
 	audioTween.tween_property($"../MusicDialogue", "volume_db", linear_to_db(0.1), 0.75).from(linear_to_db(1.0))
 	audioTween.play()
+
+func interact():
+	dialogOpen = true;
+	switch_to_dialogue()
+	Dialogic.start(Timelines.Tutorial)

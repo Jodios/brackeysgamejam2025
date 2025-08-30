@@ -4,12 +4,13 @@
 [ext_resource type="Texture2D" uid="uid://cduq5wyddjtl4" path="res://assets/environment/key.png" id="1_twuu8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kb21s"]
-radius = 20.0
 
 [node name="Key" type="Node2D"]
 script = ExtResource("1_kb21s")
 
 [node name="Key" type="Sprite2D" parent="."]
+modulate = Color(0.153077, 0.153077, 0.153077, 1)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_twuu8")
 
 [node name="Area2D" type="Area2D" parent="."]
